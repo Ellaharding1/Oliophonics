@@ -24,36 +24,41 @@
 
     <div class="gallery-section">
         <h1>Picture and Video Gallery</h1>
-        <div class="gallery-container">
-            <div class="gallery-left">
+
+    <!-- Dropdown to choose between photos and videos -->
+    <div class="gallery-dropdown">
+        <select id="gallerySelector" onchange="switchGallery()">
+            <option value="photos">Photos</option>
+            <option value="videos">Videos</option>
+        </select>
+    </div>
+
+
+
+    <div class="gallery-container fade-in" id="photos-gallery">
+        <div class="gallery-left">
                 <div class="gallery-grid">
                     
                     <div class="gallery-item" data-title="Image 1">
-                        <img src="bandPhotos/one.jpg" alt="Image 1">
+                        <img src="bandPhotos/photo10.jpg" alt="Image 1">
                     </div>
                     <div class="gallery-item" data-title="Image 2">
-                        <img src="bandPhotos/two.jpg" alt="Image 2">
+                        <img src="bandPhotos/photo11.jpg" alt="Image 2">
                     </div>
                     <div class="gallery-item" data-title="Image 3">
-                        <img src="bandPhotos/three.jpg" alt="Image 3">
+                        <img src="bandPhotos/photo12.jpg" alt="Image 3">
                     </div>
                     <div class="gallery-item" data-title="Image 4">
-                        <img src="bandPhotos/four.jpg" alt="Image 4">
+                        <img src="bandPhotos/photo13.jpg" alt="Image 4">
                     </div>
                     <div class="gallery-item" data-title="Image 11">
                         <img src="bandPhotos/Harley.jpg" alt="Image 3">
                     </div>
                     <div class="gallery-item">
-                        <img src="bandPhotos/four.jpg" alt="Image 4">
+                        <img src="bandPhotos/photo14.jpg" alt="Image 4">
                     </div>
                     <div class="gallery-item" data-title="Image 5">
-                        <img src="bandPhotos/five.jpg" alt="Image 5">
-                    </div>
-                    <div class="gallery-item" data-title="Image 9">
-                        <img src="bandPhotos/brett.png" alt="Image 3">
-                    </div>
-                    <div class="gallery-item" data-title="Image 6">
-                        <img src="bandPhotos/six.jpg" alt="Image 6">
+                        <img src="bandPhotos/photo15.jpg" alt="Image 5">
                     </div>
                     <div class="gallery-item" data-title="Image 13">
                         <img src="bandPhotos/randy.jpg" alt="Image 3">
@@ -87,12 +92,8 @@
                 <div class="gallery-item" data-title="Image 10">
                     <img src="bandPhotos/angie.jpg" alt="Image 3">
                 </div>
-                
-                <div class="gallery-item">
-                    <img src="bandPhotos/five.jpg" alt="Image 5">
-                </div>
                 <div class="gallery-item" data-title="Image 8">
-                    <img src="bandPhotos/eight.jpg" alt="Image 8">
+                    <img src="bandPhotos/photo17.png" alt="Image 8">
                 </div>
 
                 <div class="gallery-item" data-title="Image 13">
@@ -103,7 +104,35 @@
                 </div>
                 
             </div>
-        </div>
+
+
+            <!-- Hidden video section -->
+            <div class="gallery-container fade-out" id="videos-gallery" style="display: none;">
+                <div class="video-item">
+                    <video controls>
+                        <source src="bandVideos/video1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="video-item">
+                    <img src="bandPhotos/photo8.jpeg" alt="Image 3">
+                </div>
+
+                <div class="video-item">
+                    <video controls>
+                        <source src="bandVideos/video2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+    </div>
+
+    <script src="js/gallery.js"></script>
+
+
+
            
 
 </body>

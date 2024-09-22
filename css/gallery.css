@@ -28,7 +28,7 @@ body {
 header {
     width: 100%;
     padding: 20px 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent  background */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
     text-align: center;
     position: fixed; /* Keeps the nav bar fixed at the top */
     top: 0;
@@ -60,11 +60,13 @@ header {
 .gallery-section {
     padding: 100px 20px;
     text-align: center;
-    background-image: url('../bandPhotos/background-1.jpg'); /* Background image */
+    background-image: url('../bandPhotos/background-1.jpg'); /* Make sure this path is correct */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Makes the background image fixed */
+    background-repeat: no-repeat; /* Ensure it doesn't repeat */
+    min-height: 100vh; /* Ensure the section takes up the full viewport height */
     position: relative;
+    background-attachment: fixed;
 }
 
 .gallery-section::before {
@@ -84,6 +86,27 @@ header {
     position: relative;
     z-index: 2; /* Ensures the title appears above the overlay */
     font-family: 'Playfair Display', serif; /* Elegant font */
+}
+
+/* Dropdown styling */
+.gallery-dropdown {
+    margin-bottom: 20px;
+    text-align: center;
+    z-index: 1001; /* Ensure it's on top of other elements */
+    position: relative;
+    
+
+}
+
+.gallery-dropdown select {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ffffff; /* Adjust color as needed */
+
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 /* Container to hold both grids */
@@ -162,6 +185,49 @@ header {
 
 .gallery-right-item:hover img {
     transform: scale(1.1); /* Zoom on hover */
+}
+
+.video-item {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+video {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Fade-in and fade-out animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards; /* fade-in effect over 0.5 seconds */
+}
+
+.fade-out {
+    opacity: 1;
+    animation: fadeOut 0.5s forwards; /* fade-out effect over 0.5 seconds */
+}
+
+/* Keyframes for fading in and out */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 
