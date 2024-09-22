@@ -1,0 +1,74 @@
+body,html {
+   
+    margin: 0;
+    padding: 0;
+    position: relative; /* Necessary for the overlay */
+    color: #d4af37;
+    background-color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Bungee'; /* Name for the font */
+    src: url('../fonts/Bungee-Regular.ttf') format('truetype'); /* Path to the font file */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply the font to your body or specific elements */
+body {
+    font-family: 'Bungee', sans-serif;
+}
+
+
+header {
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent  background */
+    text-align: center;
+    position: fixed; /* Keeps the nav bar fixed at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures the nav bar stays on top */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    color: #FEF8AC; /* Adjust color as needed */
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: rgb(255, 0, 0); /* Adjust hover color */
+}
+
+.background-section {
+    margin-top: 30px; /* Pushes the section below the navbar */
+    height: 100vh; /* Makes the background section cover the entire viewport height */
+    background-image: url('../bandPhotos/background-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5; /* Adjust value for desired transparency */
+    
+}
+
+
+
+
+
+

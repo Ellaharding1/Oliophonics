@@ -1,0 +1,134 @@
+/* Reset and body styles */
+body,html {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color: #d4af37;
+    height: 100%; /* Ensure body and html fill the full viewport */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Bungee'; /* Name for the font */
+    src: url('../fonts/Bungee-Regular.ttf') format('truetype'); /* Path to the font file */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply the font to your body or specific elements */
+body {
+    font-family: 'Bungee', sans-serif;
+}
+
+/* Header and Navigation */
+header {
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent  background */
+    text-align: center;
+    position: fixed; /* Keeps the nav bar fixed at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures the nav bar stays on top */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    color: #FEF8AC; /* Adjust color as needed */
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: rgb(255, 0, 0); /* Adjust hover color */
+}
+
+/* Background Section */
+.background-section {
+    background-image: url('../bandPhotos/background-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Fixes the background image */
+    position: relative; /* Allows text overlay */
+    min-height: 100vh; /* Ensure it fills the viewport */
+    padding-top: 120px; /* Pushes content below the navbar */
+    z-index: -1; /* Make sure this stays behind content */
+}
+
+/* Overlay for content */
+.overlay {
+    padding: 40px;
+    color: #d4af37;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0); /* Adds semi-transparent background */
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+/* Adjust h1 */
+.overlay h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Bio Section */
+.bio-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Center container */
+}
+
+.bio {
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.bio img {
+    width: 260px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.bio h2 {
+    color: #ffffff;
+    font-size: 2em;
+    font-family:Arial, Helvetica, sans-serif; /* Matches heading font */
+    margin-bottom: 10px;
+}
+
+.bio p {
+    color: #ffffff;
+    line-height: 1.8;
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif; /* Matches heading font */
+    text-align: right; /* Align text to the left */
+}
+
+/* Ensure spacing between paragraphs */
+.bio p:not(:last-child) {
+    margin-bottom: 15px;
+}
