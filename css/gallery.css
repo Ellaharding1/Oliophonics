@@ -1,15 +1,16 @@
-body,html {
-   
-    margin: 0;
-    padding: 0;
-    position: relative; /* Necessary for the overlay */
-    color: #d4af37;
-    background-color: black;
-}
-
+/* Reset */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color: #ffffff;
+    height: 100%; /* Ensure body and html fill the full viewport */
 }
 
 @font-face {
@@ -23,7 +24,6 @@ body,html {
 body {
     font-family: 'Bungee', sans-serif;
 }
-
 
 header {
     width: 100%;
@@ -53,22 +53,115 @@ header {
 }
 
 .nav-list li a:hover {
-    color: rgb(255, 0, 0); /* Adjust hover color */
+    color: #ff3333;
 }
 
-.background-section {
-    margin-top: 30px; /* Pushes the section below the navbar */
-    height: 100vh; /* Makes the background section cover the entire viewport height */
-    background-image: url('../bandPhotos/background-1.jpg');
+/* Gallery section with background image */
+.gallery-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-image: url('../bandPhotos/background-1.jpg'); /* Background image */
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.5; /* Adjust value for desired transparency */
-    
+    background-attachment: fixed; /* Makes the background image fixed */
+    position: relative;
 }
 
+.gallery-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Dark transparent overlay */
+    z-index: 1; /* Ensures the overlay is on top of the background */
+}
 
+.gallery-section h1 {
+    font-size: 3em;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2; /* Ensures the title appears above the overlay */
+    font-family: 'Playfair Display', serif; /* Elegant font */
+}
 
+/* Container to hold both grids */
+.gallery-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Align both sections side by side */
+    gap: 20px;
+}
 
+/* Left side gallery grid */
+.gallery-left {
+    width: 50%; /* The grid will now take up 50% of the screen width */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    position: relative;
+    z-index: 2; /* Ensures the gallery appears above the overlay */
+}
+
+.gallery-item {
+    width: 100%;
+    padding-bottom: 100%; /* Ensures the items are square */
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); /* Add shadow on hover */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Zoom on hover */
+}
+
+/* Right side (single image per row) */
+.gallery-right {
+    width: 50%; /* Takes up 50% of the screen */
+    display: grid;
+    grid-template-columns: 1fr; /* One image per row */
+    grid-gap: 20px;
+}
+
+.gallery-right-item {
+    width: 100%;
+    padding-bottom: 100%; /* Ensures the items are square */
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-right-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.gallery-right-item:hover img {
+    transform: scale(1.1); /* Zoom on hover */
+}
 
 
