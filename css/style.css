@@ -60,7 +60,7 @@ header {
 
 /* Background Section */
 .background-section {
-    margin-top: 0px; /* Ensure it doesn't overlap with navbar */
+    margin-top: px; /* Ensure it doesn't overlap with navbar */
     height: 100vh; 
     background-image: url('../bandPhotos/updatedBackround.png');
     background-size: cover; /* This ensures the background covers the container */
