@@ -1,24 +1,27 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body, html {
     margin: 0;
     padding: 0;
     position: relative;
     color: #d4af37;
+    background-color: black;
     height: 100%;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
 @font-face {
-    font-family: 'Bungee';
-    src: url('../fonts/Bungee-Regular.ttf') format('truetype');
+    font-family: 'Bungee'; /* Name for the font */
+    src: url('../fonts/Bungee-Regular.ttf') format('truetype'); /* Path to the font file */
     font-weight: normal;
     font-style: normal;
 }
 
-/* Apply the font to your body or specific elements */
+/* Apply the font to your body */
 body {
     font-family: 'Bungee', sans-serif;
 }
@@ -27,12 +30,11 @@ body {
 header {
     width: 100%;
     padding: 20px 0;
-    background-color: rgba(0, 0, 0, 0.8); 
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
     text-align: center;
-    position: relative; /* Prevents the nav bar from following the page */
-    top: 0;
-    left: 0;
+    position: relative;
     z-index: 1000;
+    margin-bottom: 0; /* Ensure there's no gap below the header */
 }
 
 /* Navigation */
@@ -45,7 +47,7 @@ header {
 
 .nav-list li a {
     text-decoration: none;
-    font-size: 18px; /* Default font size for larger screens */
+    font-size: 18px;
     font-weight: 400;
     color: #FEF8AC;
     text-transform: uppercase;
@@ -53,19 +55,21 @@ header {
 }
 
 .nav-list li a:hover {
-    color: rgb(255, 0, 0);
+    color: rgb(255, 0, 0); /* Adjust hover color */
 }
 
 /* Background Section */
 .background-section {
     margin-top: 0px; /* Ensure it doesn't overlap with navbar */
     height: 100vh; 
-    background-image: url('../bandPhotos/updatedBackround.png'); /* Default background for desktop */
-    background-size: cover; /* This ensures the background covers the container */
+    background-image: url('../bandPhotos/updatedBackround.png'); /* For desktop */
+    background-size: cover; 
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #000000; /* Fallback color if image fails to load */
-    background-attachment: fixed; /* Fixed background for desktops */
+    background-color: #000000; /* Fallback color */
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
 }
 
 /* Media Query Adjustments */
@@ -89,10 +93,9 @@ header {
     }
 
     .background-section {
-        background-image: url('../bandPhotos/tablet-background.png'); /* Tablet-specific background */
         background-size: cover; /* Ensure the image fits within the screen on smaller devices */
         background-attachment: scroll; /* Disable fixed background for mobile */
-        background-position: top center; 
+        background-position: center top;
         height: auto;
         min-height: 100vh; /* Ensures background covers at least the viewport height */
     }
@@ -105,9 +108,11 @@ header {
     }
 
     .background-section {
-        background-image: url('../bandPhotos/phoneBackround.jpg'); /* Mobile-specific background */
-        background-size: contain;
-        background-position: center center; 
+        background-image: url('../bandPhotos/phoneBackround.jpg'); /* Different image for mobile */
+        background-size: cover; /* Ensure the image fits within the screen */
+        background-position: center center;
         margin-top: 50px;
+        height: auto;
+        min-height: 100vh; /* Ensure it covers the screen */
     }
 }
