@@ -25,18 +25,18 @@
     <div class="gallery-section">
         <h1>Picture and Video Gallery</h1>
 
-    <!-- Dropdown to choose between photos and videos -->
-    <div class="gallery-dropdown">
-        <select id="gallerySelector" onchange="switchGallery()">
-            <option value="photos">Photos</option>
-            <option value="videos">Videos</option>
-        </select>
-    </div>
+        <!-- Dropdown to choose between photos and videos -->
+        <div class="gallery-dropdown">
+            <select id="gallerySelector" onchange="switchGallery()">
+                <option value="photos">Photos</option>
+                <option value="videos">Videos</option>
+            </select>
+        </div>
 
 
 
-    <div class="gallery-container fade-in" id="photos-gallery">
-        <div class="gallery-left">
+        <div class="gallery-container fade-in" id="photos-gallery">
+            <div class="gallery-left">
                 <div class="gallery-grid">
                     
                     <div class="gallery-item" data-title="Image 1">
@@ -86,6 +86,7 @@
                     </div>
                 </div>
             </div>
+        
 
             <div class="gallery-right">
                 <!-- Right-side single photo per row -->
@@ -104,32 +105,24 @@
                 </div>
                 
             </div>
+        </div>
+    
 
-
-            <!-- Hidden video section -->
-            <div class="gallery-container fade-out" id="videos-gallery" style="display: none;">
-                <div class="video-item">
-                    <video controls>
-                        <source src="bandVideos/video1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-
-                <div class="video-item">
-                    <img src="bandPhotos/photo8.jpeg" alt="Image 3">
-                </div>
-
-                <div class="video-item">
-                    <video controls>
-                        <source src="bandVideos/video2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
+        <div class="gallery-container fade-out" id="videos-gallery" >
+            <div class="video-item">
+                <video controls>
+                    <source src="bandVideos/IMG_4892.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
+                
+        </div>
+            
 
+    
+
+        <script src="js/gallery.js"></script>
     </div>
-
-    <script src="js/gallery.js"></script>
 
 
 

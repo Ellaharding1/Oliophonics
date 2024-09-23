@@ -69,17 +69,6 @@ header {
     background-attachment: fixed;
 }
 
-.gallery-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Dark transparent overlay */
-    z-index: 1; /* Ensures the overlay is on top of the background */
-}
-
 .gallery-section h1 {
     font-size: 3em;
     margin-bottom: 50px;
@@ -94,15 +83,12 @@ header {
     text-align: center;
     z-index: 1001; /* Ensure it's on top of other elements */
     position: relative;
-    
-
 }
 
 .gallery-dropdown select {
     padding: 10px;
     font-size: 16px;
     background-color: #ffffff; /* Adjust color as needed */
-
     color: black;
     border: none;
     border-radius: 5px;
@@ -187,47 +173,32 @@ header {
     transform: scale(1.1); /* Zoom on hover */
 }
 
+/* Video-specific styling */
+.video-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .video-item {
     margin: 20px 0;
     display: flex;
     justify-content: center;
+    width: 80%; /* Set appropriate width */
 }
 
 video {
-    width: 80%;
-    max-width: 800px;
+    width: 100%;
+    max-width: 400px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Fade-in and fade-out animations */
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 0.5s forwards; /* fade-in effect over 0.5 seconds */
+#videos-gallery {
+    display: none;  /* Initially hidden */
 }
 
-.fade-out {
-    opacity: 1;
-    animation: fadeOut 0.5s forwards; /* fade-out effect over 0.5 seconds */
+#photos-gallery {
+    display: flex;  /* Initially visible */
 }
-
-/* Keyframes for fading in and out */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-
