@@ -29,13 +29,11 @@ header {
     padding: 20px 0;
     background-color: rgba(0, 0, 0, 0.8); 
     text-align: center;
-    /* Remove position: fixed to prevent the nav bar from following the page */
-    position: relative; /* Use relative positioning instead of fixed */
+    position: relative; /* Prevents the nav bar from following the page */
     top: 0;
     left: 0;
     z-index: 1000;
 }
-
 
 /* Navigation */
 .nav-list {
@@ -60,14 +58,14 @@ header {
 
 /* Background Section */
 .background-section {
-    margin-top: px; /* Ensure it doesn't overlap with navbar */
+    margin-top: 0px; /* Ensure it doesn't overlap with navbar */
     height: 100vh; 
-    background-image: url('../bandPhotos/updatedBackround.png');
+    background-image: url('../bandPhotos/updatedBackround.png'); /* Default background for desktop */
     background-size: cover; /* This ensures the background covers the container */
     background-repeat: no-repeat;
     background-position: center;
     background-color: #000000; /* Fallback color if image fails to load */
-    background-attachment: fixed;
+    background-attachment: fixed; /* Fixed background for desktops */
 }
 
 /* Media Query Adjustments */
@@ -91,7 +89,8 @@ header {
     }
 
     .background-section {
-        background-size: contain; /* Ensure the image fits within the screen on smaller devices */
+        background-image: url('../bandPhotos/tablet-background.png'); /* Tablet-specific background */
+        background-size: cover; /* Ensure the image fits within the screen on smaller devices */
         background-attachment: scroll; /* Disable fixed background for mobile */
         background-position: top center; 
         height: auto;
@@ -106,6 +105,7 @@ header {
     }
 
     .background-section {
+        background-image: url('../bandPhotos/phoneBackround.jpg'); /* Mobile-specific background */
         background-size: contain;
         background-position: center center; 
         margin-top: 50px;
