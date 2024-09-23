@@ -181,24 +181,29 @@ header {
     align-items: center;
 }
 
+/* Style for the video gallery container */
+#videos-gallery {
+    display: none;       
+    flex-direction: column; /* Stack videos vertically */
+    gap: 20px;           /* Add space between videos */
+}
+
+/* Video container */
 .video-item {
-    margin: 20px 0;
+    width: 100%;          /* Take up the full width of the container */
     display: flex;
-    justify-content: center;
-    width: 80%; /* Set appropriate width */
+    justify-content: center; /* Center the video */
 }
 
 video {
-    width: 100%;
-    max-width: 400px;
+    width: 80%;           /* Video will be 80% of the container width */
+    max-width: 800px;      /* Maximum width for the video */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-#videos-gallery {
-    display: none;  /* Initially hidden */
-}
 
 #photos-gallery {
     display: flex;  /* Initially visible */
 }
+
