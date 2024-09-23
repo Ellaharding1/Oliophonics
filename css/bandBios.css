@@ -1,17 +1,17 @@
 /* Reset and body styles */
-body,html {
+body, html {
     margin: 0;
     padding: 0;
     position: relative;
     color: #d4af37;
     height: 100%; /* Ensure body and html fill the full viewport */
+    
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 @font-face {
@@ -32,7 +32,7 @@ header {
     padding: 20px 0;
     background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent  background */
     text-align: center;
-    position: fixed; /* Keeps the nav bar fixed at the top */
+    position: relative; /* Navbar is static, doesn't follow the scroll */
     top: 0;
     left: 0;
     z-index: 1000; /* Ensures the nav bar stays on top */
@@ -118,7 +118,7 @@ header {
 .bio h2 {
     color: #ffffff;
     font-size: 2em;
-    font-family:Arial, Helvetica, sans-serif; /* Matches heading font */
+    font-family: Arial, Helvetica, sans-serif; /* Matches heading font */
     margin-bottom: 10px;
 }
 
@@ -133,4 +133,88 @@ header {
 /* Ensure spacing between paragraphs */
 .bio p:not(:last-child) {
     margin-bottom: 15px;
+}
+
+/* Responsive Design */
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-list li a {
+        font-size: 16px; /* Adjusted for tablets */
+    }
+
+    .background-section {
+        background-image: url('../bandPhotos/mobileBackground.jpg'); /* Mobile-specific background */
+        background-attachment: scroll; /* Disable fixed background on mobile */
+        background-position: center;
+    }
+
+    .overlay {
+        margin-left: 40px;
+        margin-right: 40px;
+        padding: 20px;
+    }
+
+    .overlay h1 {
+        font-size: 2em; /* Reduce font size for mobile */
+    }
+
+    .bio {
+        flex-direction: column;
+    }
+
+    .bio img {
+        width: 200px; /* Adjust image size for smaller screens */
+    }
+
+    .bio h2 {
+        font-size: 1.5em; /* Smaller font for headings */
+    }
+
+    .bio p {
+        font-size: 1em; /* Smaller font for paragraphs */
+        text-align: center; /* Align text center for better mobile readability */
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    .nav-list li a {
+        font-size: 14px; /* Even smaller font for phones */
+    }
+
+    .background-section {
+        background-image: url('../bandPhotos/phonebackround2.webp'); /* Mobile-specific background */
+        background-size: cover;
+        background-position: center top;
+        min-height: 100vh;
+    }
+
+    .overlay {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 15px;
+    }
+
+    .overlay h1 {
+        font-size: 1.5em; /* Further reduce font size for mobile */
+    }
+
+    .bio img {
+        width: 150px; /* Adjust image size for mobile screens */
+    }
+
+    .bio h2 {
+        font-size: 1.2em; /* Smaller font for headings */
+    }
+
+    .bio p {
+        font-size: 0.9em; /* Adjust font size for mobile */
+        text-align: center; /* Keep text centered */
+    }
 }
