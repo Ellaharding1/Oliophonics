@@ -28,7 +28,7 @@ header {
     padding: 20px 0;
     background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -58,7 +58,7 @@ header {
 .background-section {
     padding-top: 100px; /* Added padding to prevent overlap with the fixed navbar */
     height: 100vh;
-    background-image: url('../bandPhotos/background-1.jpg');
+    background-image: url('../bandPhotos/background-1.jpg'); /* Desktop background */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -70,7 +70,6 @@ header {
     color: #f6f2f2;
     font-family: 'Bungee', sans-serif;
     text-align: center;
-
 }
 
 /* Music Item */
@@ -121,6 +120,42 @@ audio {
     .music-info {
         margin-left: 0;
         margin-top: 15px;
+    }
+
+    audio {
+        width: 100%;
+    }
+}
+
+/* Responsive Design for iPhones and small mobile phones */
+@media (max-width: 480px) {
+    header {
+        padding: 10px 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-list li a {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    .background-section {
+        background-image: url('../bandPhotos/phonebackround2.webp'); /* Mobile-optimized background */
+        background-size: cover;
+        background-position: center top;
+        height: auto;
+        min-height: 100vh; /* Maintain at least full screen height */
+    }
+
+    .music-item {
+        padding: 10px;
+    }
+
+    .music-info h2 {
+        font-size: 1.2em; /* Smaller heading for mobile */
     }
 
     audio {
