@@ -31,7 +31,7 @@ header {
     padding: 20px 0;
     background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
-    position: fixed;
+    position: relative; /* Not fixed to allow normal scrolling */
     top: 0;
     left: 0;
     z-index: 1000;
@@ -57,9 +57,10 @@ header {
     color: rgb(255, 0, 0);
 }
 
+/* Background Section */
 .background-section {
     height: 100vh;
-    background-image: url('../bandPhotos/background-1.jpg');
+    background-image: url('../bandPhotos/background-1.jpg'); /* Default desktop background */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -141,5 +142,71 @@ header {
     text-decoration: underline;
 }
 
+/* Responsive Design */
 
+/* Tablet and smaller screens adjustments */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column; /* Stack navigation vertically */
+        gap: 20px;
+    }
 
+    .nav-list li a {
+        font-size: 16px; /* Slightly smaller font for tablets */
+    }
+
+    .background-section {
+        background-image: url('../bandPhotos/mobileBackground.jpg'); /* Mobile background */
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll; /* Prevent fixed background on mobile */
+    }
+
+    .container {
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+
+    #contact h1 {
+        font-size: 28px; /* Smaller heading on smaller screens */
+    }
+
+    #contact input,
+    #contact textarea {
+        font-size: 14px; /* Adjust form input size */
+    }
+
+    #contact button {
+        font-size: 16px; /* Adjust button font size */
+    }
+}
+
+/* Mobile phone adjustments */
+@media (max-width: 480px) {
+    .nav-list li a {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    .background-section {
+        background-image: url('../bandPhotos/phonebackround2.webp'); /* Mobile background */
+        background-size: cover;
+        background-position: center top;
+        min-height: 100vh; /* Ensure full height on mobile */
+    }
+
+    .container {
+        padding: 15px; /* Further reduce padding for mobile */
+    }
+
+    #contact h1 {
+        font-size: 24px; /* Further reduce heading size */
+    }
+
+    #contact input,
+    #contact textarea {
+        font-size: 12px; /* Adjust form input size */
+    }
+
+    #contact button {
+        font-size: 14px; /* Adjust button font size */
+    }
+}
