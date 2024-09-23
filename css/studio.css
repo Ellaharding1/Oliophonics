@@ -1,15 +1,18 @@
-body,html {
-   
-    margin: 0;
-    padding: 0;
-    position: relative; /* Necessary for the overlay */
-    color: #d4af37;
-    background-color: black;
-}
-
+/* General reset */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color: #d4af37;
+    background-color: black;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 @font-face {
@@ -19,23 +22,22 @@ body,html {
     font-style: normal;
 }
 
-/* Apply the font to your body or specific elements */
+/* Apply the font to the body */
 body {
     font-family: 'Bungee', sans-serif;
 }
 
-
+/* Header */
 header {
     width: 100%;
     padding: 20px 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent  background */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
     text-align: center;
-    position: fixed; /* Keeps the nav bar fixed at the top */
-    top: 0;
-    left: 0;
-    z-index: 1000; /* Ensures the nav bar stays on top */
+    position: relative;
+    z-index: 1000;
 }
 
+/* Navigation */
 .nav-list {
     list-style: none;
     display: flex;
@@ -47,7 +49,7 @@ header {
     text-decoration: none;
     font-size: 18px;
     font-weight: 400;
-    color: #FEF8AC; /* Adjust color as needed */
+    color: #FEF8AC;
     text-transform: uppercase;
     transition: color 0.3s ease;
 }
@@ -56,21 +58,63 @@ header {
     color: rgb(255, 0, 0); /* Adjust hover color */
 }
 
+/* Background Section */
 .background-section {
-    margin-top: 30px; /* Pushes the section below the navbar */
-    height: 100vh; /* Makes the background section cover the entire viewport height */
+    margin-top: 0px; /* Ensures it's below the navbar */
+    min-height: 100vh; /* Ensures the background covers the full viewport */
     background-image: url('../bandPhotos/background-1.jpg');
-    background-size: cover;
+    background-size: cover; /* Ensures the background adjusts to the container */
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.5; /* Adjust value for desired transparency */
-    
+    background-color: #000000; /* Fallback color */
+    background-attachment: fixed; /* Fixed background for desktops */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+    .nav-list {
+        gap: 20px;
+    }
+    
+    .nav-list li a {
+        font-size: 16px; /* Slightly smaller for tablet-sized screens */
+    }
 
+    .background-section {
+        background-size: cover; /* Ensure the background adjusts */
+    }
+}
 
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column; /* Stack navigation vertically on smaller screens */
+        gap: 15px;
+    }
 
+    .nav-list li a {
+        font-size: 14px; /* Smaller text for navigation */
+    }
 
+    .background-section {
+        background-size: cover; /* Ensure the background adjusts */
+        background-attachment: scroll; /* Disable fixed background on mobile */
+        background-position: center top;
+        min-height: 100vh; /* Maintain full screen height */
+    }
+}
 
+@media (max-width: 480px) {
+    .nav-list li a {
+        font-size: 12px; /* Even smaller text for very small screens */
+    }
 
+    .background-section {
+        margin-top: 60px; /* Smaller margin for mobile */
+        background-size: cover; /* Ensure the background adjusts */
+        background-position: center top; /* Keep background centered */
+    }
+}
 

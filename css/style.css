@@ -1,10 +1,9 @@
-body,html {
-   
+body, html {
     margin: 0;
     padding: 0;
-    position: relative; /* Necessary for the overlay */
+    position: relative;
     color: #d4af37;
-    background-color: black;
+    height: 100%;
 }
 
 * {
@@ -13,8 +12,8 @@ body,html {
 }
 
 @font-face {
-    font-family: 'Bungee'; /* Name for the font */
-    src: url('../fonts/Bungee-Regular.ttf') format('truetype'); /* Path to the font file */
+    font-family: 'Bungee';
+    src: url('../fonts/Bungee-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,35 +23,21 @@ body {
     font-family: 'Bungee', sans-serif;
 }
 
-
+/* Header */
 header {
     width: 100%;
     padding: 20px 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent  background */
+    background-color: rgba(0, 0, 0, 0.8); 
     text-align: center;
-    position: fixed; /* Keeps the nav bar fixed at the top */
+    /* Remove position: fixed to prevent the nav bar from following the page */
+    position: relative; /* Use relative positioning instead of fixed */
     top: 0;
     left: 0;
-    z-index: 1000; /* Ensures the nav bar stays on top */
-}
-
-.side-list{
-    list-style: none;
-    display: flex;
-    justify-content: right;
-    gap:30px;
-}
-
-.side-list li a{
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 400;
-    color: #FEF8AC; /* Adjust color as needed */
-    text-transform: uppercase;
-    transition: color 0.3s ease;
+    z-index: 1000;
 }
 
 
+/* Navigation */
 .nav-list {
     list-style: none;
     display: flex;
@@ -62,30 +47,67 @@ header {
 
 .nav-list li a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 18px; /* Default font size for larger screens */
     font-weight: 400;
-    color: #FEF8AC; /* Adjust color as needed */
+    color: #FEF8AC;
     text-transform: uppercase;
     transition: color 0.3s ease;
 }
 
 .nav-list li a:hover {
-    color: rgb(255, 0, 0); /* Adjust hover color */
+    color: rgb(255, 0, 0);
 }
 
+/* Background Section */
 .background-section {
-    margin-top: 30px; /* Pushes the section below the navbar */
-    height: 100vh; /* Makes the background section cover the entire viewport height */
+    margin-top: 0px; /* Ensure it doesn't overlap with navbar */
+    height: 100vh; 
     background-image: url('../bandPhotos/updatedBackround.png');
-    background-size: cover;
+    background-size: cover; /* This ensures the background covers the container */
     background-repeat: no-repeat;
     background-position: center;
+    background-color: #000000; /* Fallback color if image fails to load */
+    background-attachment: fixed;
 }
 
+/* Media Query Adjustments */
+@media (max-width: 1024px) {
+    /* Scale down font size for tablets */
+    .nav-list li a {
+        font-size: 16px; /* Smaller font size */
+    }
+}
 
+@media (max-width: 768px) {
+    /* Adjust for smaller devices like large phones or small tablets */
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
 
+    .nav-list li a {
+        font-size: 14px; /* Even smaller font size */
+    }
 
+    .background-section {
+        background-size: contain; /* Ensure the image fits within the screen on smaller devices */
+        background-attachment: scroll; /* Disable fixed background for mobile */
+        background-position: top center; 
+        height: auto;
+        min-height: 100vh; /* Ensures background covers at least the viewport height */
+    }
+}
 
+@media (max-width: 480px) {
+    /* Adjust for mobile phones */
+    .nav-list li a {
+        font-size: 12px; /* Smallest font size for phones */
+    }
 
-
-
+    .background-section {
+        background-size: contain;
+        background-position: center center; 
+        margin-top: 50px;
+    }
+}
