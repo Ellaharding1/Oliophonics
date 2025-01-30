@@ -34,8 +34,8 @@ The website is built using the following technologies:
 - Easily extendable with additional pages or dynamic content if needed.
 
 ## 📬 Contact
-For updates, collaboration, or inquiries, visit the [Contact Page](https://oliophonic.ca/contact) on the website.
+For updates, collaboration, or inquiries, visit the [Contact Page](https://oliophonic.ca/contact.html) on the website.
 
 ---
 
-This README provides an overview of the website’s **technical structure, deployment, and integrations**. Let me know if you'd like any refinements! 🚀
+This README provides an overview of the website’s **technical structure, deployment, and integrations**. Let me know if you'd like any refinements! 
