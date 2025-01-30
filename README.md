@@ -27,3 +27,15 @@ The website is built using the following technologies:
   - Embedded **Spotify** & **Apple Music** for streaming
   - Social media links (Facebook, Instagram)
   - Contact form for inquiries
+ 
+## 🚀 Deployment & Maintenance
+- Hosted on **FastComet** for reliable uptime.
+- Regular updates for events and media.
+- Easily extendable with additional pages or dynamic content if needed.
+
+## 📬 Contact
+For updates, collaboration, or inquiries, visit the [Contact Page](https://oliophonic.ca/contact) on the website.
+
+---
+
+This README provides an overview of the website’s **technical structure, deployment, and integrations**. Let me know if you'd like any refinements! 🚀
